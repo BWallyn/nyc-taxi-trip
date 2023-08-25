@@ -58,6 +58,7 @@ def download_all_data(link: str, yyyy_start: int, yyyy_end: int, mm_start: int, 
         df = pd.concat([df, df_tmp])
         del df_tmp
         gc.collect()
+    df.reset_index(drop=True, inplace=True)
     return df
 
 
